@@ -60,7 +60,7 @@ function App() {
               <h3 className="card_name"> {dessert.name}</h3>
 
               <p className="card_price">
-                <b>{dessert.price} </b>
+                <b>{dessert.price}$ </b>
               </p>
             </div>
           ))}
@@ -98,27 +98,29 @@ function App() {
                     </span>
                   </p>
                   <hr className="hr" />
+                  <div className="cart-total">
+                    <div>
+                      <h4>Order Total</h4>
+                    </div>
+                    <div>
+                      {desserts
+                        .filter((dessert) => count[dessert.id])
+                        .reduce(
+                          (sum, dessert) =>
+                            sum + dessert.price * count[dessert.id],
+                          0
+                        )}
+                      $
+                    </div>
+                  </div>{" "}
+                  <p className="bottom">
+                    <img src="/images/icon-carbon-neutral.svg" alt="" /> This is
+                    a carbon-neutral delivery
+                  </p>
+                  <button className="last">Confirm Order</button>
                 </div>
               ))}
-
-            <div className="cart-total">
-              <div>
-                <h4>Order Total</h4>
-              </div>
-              <div>
-                {desserts
-                  .filter((dessert) => count[dessert.id])
-                  .reduce(
-                    (sum, dessert) => sum + dessert.price * count[dessert.id],
-                    0
-                  )}
-                $
-              </div>
-            </div>
-            <p className="bottom"><img src="/images/icon-carbon-neutral.svg" alt="" /> This is a carbon-neutral delivery</p>
-            <button className="last">Confirm Order</button>
           </div>
-          
         )}
       </div>
     </div>
