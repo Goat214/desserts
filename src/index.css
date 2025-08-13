@@ -375,3 +375,28 @@ font-style: normal;
 font-weight: 600;
 line-height: normal;
 }
+
+/* Tablet ekranlari: 768px dan kichik va 1024px gacha */
+@media (max-width: 1024px) and (min-width: 768px) {
+  .two {
+    display: block; /* flex emas, elementlar pastga tushadi */
+  }
+}
+
+/* Mobil ekranlari: 767px dan kichik */
+@media (max-width: 767px) {
+  .cards {
+    grid-template-columns: 1fr; /* har bir card 1 qator bo‘lsin */
+    gap: 16px; /* cardlar orasidagi bo‘shliqni kamaytirish */
+  }
+  
+  .container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  
+  .your-cart {
+    width: 100%; /* cart kengligi ekran bo‘yicha */
+    margin-left: 0;
+  }
+}
