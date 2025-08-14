@@ -1,35 +1,34 @@
-/* red-hat-text-regular - latin */
+/* Fonts */
 @font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-display: swap;
   font-family: "Red Hat Text";
   font-style: normal;
   font-weight: 400;
-  src: url("../fonts/red-hat-text-v18-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url("../fonts/red-hat-text-v18-latin-regular.woff2") format("woff2");
 }
-/* red-hat-text-500 - latin */
 @font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-display: swap;
   font-family: "Red Hat Text";
   font-style: normal;
   font-weight: 500;
-  src: url("../fonts/red-hat-text-v18-latin-500.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url("../fonts/red-hat-text-v18-latin-500.woff2") format("woff2");
 }
-/* red-hat-text-600 - latin */
 @font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-display: swap;
   font-family: "Red Hat Text";
   font-style: normal;
   font-weight: 600;
-  src: url("../fonts/red-hat-text-v18-latin-600.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url("../fonts/red-hat-text-v18-latin-600.woff2") format("woff2");
 }
-/* red-hat-text-700 - latin */
 @font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-display: swap;
   font-family: "Red Hat Text";
   font-style: normal;
   font-weight: 700;
-  src: url("../fonts/red-hat-text-v18-latin-700.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url("../fonts/red-hat-text-v18-latin-700.woff2") format("woff2");
 }
+
+/* Reset & global styles */
 *,
 *::after,
 *::before {
@@ -37,46 +36,39 @@
   padding: 0;
   box-sizing: border-box;
 }
-
 html {
   height: 100%;
   font-size: 62.5%;
   scroll-behavior: smooth;
 }
-
 ul,
 ol {
   list-style: none;
 }
-
 a {
   display: inline-block;
   text-decoration: none;
 }
-
 img {
   display: flex;
   object-fit: cover;
 }
-
 body {
   height: 100%;
   display: flex;
   flex-direction: column;
   font-family: "Red Hat Text", sans-serif;
   transition: all 0.3s ease;
-  background: var(--color-rose-50, #FCF8F6);
-  
+  background: var(--color-rose-50, #fcf8f6);
 }
-
 main {
   flex-grow: 1;
 }
-
 h1 {
   margin: 0;
 }
 
+/* Container */
 .container {
   margin-top: 6.4rem;
   width: 100%;
@@ -87,30 +79,24 @@ h1 {
   padding-right: 30px;
 }
 
+/* Cards */
 .cards-container {
-  
   width: 80rem;
 }
-
 .cards {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 ta teng ustun */
+  grid-template-columns: repeat(3, 1fr);
   gap: 24px;
 }
-
 .title {
-
   color: var(--color-rose-900, #260f08);
-
-  /* text-preset-1 */
   font-family: "Red Hat Text";
   font-size: var(--font-size-text-preset-1, 40px);
   font-style: normal;
   font-weight: 700;
-  line-height: 120%; 
+  line-height: 120%;
   margin-bottom: 3.2rem;
 }
-
 .card_img {
   display: flex;
   height: 24rem;
@@ -121,7 +107,6 @@ h1 {
   align-self: stretch;
   border-radius: var(--spacing-100, 0.8rem);
 }
-
 .btn {
   position: absolute;
   margin-top: -19px;
@@ -136,62 +121,54 @@ h1 {
   border-radius: 999px;
   border: 1px solid var(--color-rose-400, #ad8a85);
   background: var(--color-white, #fff);
-
   color: var(--color-rose-900, #260f08);
   font-family: "Red Hat Text";
   font-size: var(--font-size-text-preset-4, 14px);
   font-style: normal;
   font-weight: 600;
   line-height: normal;
-
 }
-
 .card_description {
   margin-top: 3.8rem;
-  color: var(--color-rose-500, #87635A);  
-font-family: "Red Hat Text";
-font-size: var(--font-size-text-preset-4, 14px);
-font-style: normal;
-font-weight: 400;
-line-height: normal;
-
+  color: var(--color-rose-500, #87635a);
+  font-family: "Red Hat Text";
+  font-size: var(--font-size-text-preset-4, 14px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
-
 .card_name {
-  color: var(--color-rose-900, #260F08);
-
-  /* text-preset-3 */
+  color: var(--color-rose-900, #260f08);
   font-family: "Red Hat Text";
   font-size: var(--spacing-200, 16px);
   font-style: normal;
   font-weight: 600;
   line-height: normal;
 }
-
 .card_price {
-  color: var(--color-red, #C73B0F);
-
-/* text-preset-3 */
-font-family: "Red Hat Text";
-font-size: var(--spacing-200, 16px);
-font-style: normal;
-font-weight: 600;
-line-height: normal;
+  color: var(--color-red, #c73b0f);
+  font-family: "Red Hat Text";
+  font-size: var(--spacing-200, 16px);
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
 }
 .btn-secend {
   display: flex;
-width: 160px;
-max-width: 160px;
-padding: var(--spacing-150, 12px);
-justify-content: space-between;
-align-items: center;
-border-radius: 999px;
-background: var(--color-red, #C73B0F);
+  width: 160px;
+  max-width: 160px;
+  padding: var(--spacing-150, 12px);
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 999px;
+  background: var(--color-red, #c73b0f);
 }
 .two {
   display: flex;
 }
-.your-cart{
+
+/* Your Cart */
+.your-cart {
   display: flex;
   width: 384px;
   padding: var(--spacing-300, 24px);
@@ -200,203 +177,238 @@ background: var(--color-red, #C73B0F);
   gap: var(--spacing-300, 24px);
   margin-left: 32px;
   border-radius: var(--spacing-150, 12px);
-  background: var(--color-white, #FFF);
+  background: var(--color-white, #fff);
   height: 45rem;
 }
 .your-cart_title {
-  color: var(--color-red, #C73B0F);
-font-family: "Red Hat Text";
-font-size: var(--font-size-text-preset-2, 24px);
-font-style: normal;
-font-weight: 700;
-line-height: normal;
-
+  color: var(--color-red, #c73b0f);
+  font-family: "Red Hat Text";
+  font-size: var(--font-size-text-preset-2, 24px);
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
 }
 .preper {
   display: flex;
-padding: var(--spacing-200, 16px) 0;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-gap: var(--spacing-200, 16px);
-align-self: stretch;
+  padding: var(--spacing-200, 16px) 0;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: var(--spacing-200, 16px);
+  align-self: stretch;
 }
-
 .your-cart_img {
   width: 128px;
-height: 128px;
+  height: 128px;
+}
+.your-cart_description {
+  color: var(--color-rose-500, #87635a);
+  text-align: center;
+  font-family: "Red Hat Text";
+  font-size: var(--font-size-text-preset-4, 14px);
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  margin-bottom: 3.9rem;
 }
 
-.your-cart_description {
-  color: var(--color-rose-500, #87635A);
-text-align: center;
-font-family: "Red Hat Text";
-font-size: var(--font-size-text-preset-4, 14px);
-font-style: normal;
-font-weight: 600;
-line-height: normal;
-margin-bottom: 3.9rem;
-}
+/* Cart item */
 .cart-item-name {
   font-weight: 600;
   margin: 0;
 }
-
 .cart-item-details {
   font-size: 14px;
   color: #7a7a7a;
 }
-
 .count {
-  color: #d84315;
-  font-weight: bold;
+  color: var(--color-red, #c73b0f);
+  font-family: "Red Hat Text";
+  font-size: var(--font-size-text-preset-4, 14px);
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  margin-right: 0.8rem;
 }
-
-.price {
-  font-weight: bold;
-  margin-left: 5px;
+.singlePrice {
+  color: var(--color-rose-500, #87635a);
+  font-family: "Red Hat Text";
+  font-size: var(--font-size-text-preset-4, 14px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-right: 0.8rem;
 }
-
-.count {
-  color: var(--color-red, #C73B0F);
-
-/* text-preset-4-bold */
-font-family: "Red Hat Text";
-font-size: var(--font-size-text-preset-4, 14px);
-font-style: normal;
-font-weight: 600;
-line-height: normal;
-margin-right: 0.8rem;
-}
-.singlePrice{
-  color: var(--color-rose-500, #87635A);
-
-/* text-preset-4 */
-font-family: "Red Hat Text";
-font-size: var(--font-size-text-preset-4, 14px);
-font-style: normal;
-font-weight: 400;
-line-height: normal;
-margin-right: 0.8rem;
-}
-
-.pricee{
-  color: var(--color-rose-500, #87635A);
-
-/* text-preset-4-bold */
-font-family: "Red Hat Text";
-font-size: var(--font-size-text-preset-4, 14px);
-font-style: normal;
-font-weight: 600;
-line-height: normal;
-margin-right: 25rem;
+.pricee {
+  color: var(--color-rose-500, #87635a);
+  font-family: "Red Hat Text";
+  font-size: var(--font-size-text-preset-4, 14px);
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  margin-right: 25rem;
 }
 .remove-btn {
- padding: 2px;
+  padding: 2px;
   width: 20px;
-height: 20px;
-border: 2px solid  #7a7a7a;
-border-radius: 50%;
-
+  height: 20px;
+  border: 2px solid #7a7a7a;
+  border-radius: 50%;
 }
 
-hr{
+/* hr */
+hr {
   margin-top: 16px;
   margin-bottom: 16px;
 }
 
+/* Cart total */
 .cart-total {
- 
   display: flex;
-justify-content: space-between;
-align-items: center;
-align-self: stretch;
-margin-bottom: 2.4rem;
-  h4{
-    color: var(--color-rose-900, #260F08);
-
-/* text-preset-4 */
-font-family: "Red Hat Text";
-font-size: var(--font-size-text-preset-4, 14px);
-font-style: normal;
-font-weight: 400;
-line-height: normal;
-
-  }
-  div{
-    color: var(--color-rose-900, #260F08);
-
-/* text-preset-2 */
-font-family: "Red Hat Text";
-font-size: var(--font-size-text-preset-2, 24px);
-font-style: normal;
-font-weight: 700;
-line-height: normal;
-  }
+  justify-content: space-between;
+  align-items: center;
+  align-self: stretch;
+  margin-bottom: 2.4rem;
+}
+.cart-total h4 {
+  color: var(--color-rose-900, #260f08);
+  font-family: "Red Hat Text";
+  font-size: var(--font-size-text-preset-4, 14px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.cart-total div {
+  color: var(--color-rose-900, #260f08);
+  font-family: "Red Hat Text";
+  font-size: var(--font-size-text-preset-2, 24px);
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
 }
 
+/* Bottom & last */
 .bottom {
   display: flex;
   padding: var(--spacing-200, 16px);
-
   justify-content: center;
   align-items: center;
   gap: var(--spacing-300, 24px);
   align-self: stretch;
   border-radius: var(--spacing-100, 8px);
-background: var(--color-rose-50, #FCF8F6);
-color: var(--color-rose-900, #260F08);
-
-/* text-preset-4-bold */
-font-family: "Red Hat Text";
-font-size: var(--font-size-text-preset-4, 14px);
-font-style: normal;
-font-weight: 600;
-line-height: normal;
-margin-bottom: 2.6rem;
+  background: var(--color-rose-50, #fcf8f6);
+  color: var(--color-rose-900, #260f08);
+  font-family: "Red Hat Text";
+  font-size: var(--font-size-text-preset-4, 14px);
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  margin-bottom: 2.6rem;
 }
-
-.last{
+.last {
   display: flex;
-padding: var(--spacing-200, 16px) var(--spacing-300, 24px);
-justify-content: center;
-align-items: center;
-gap: var(--spacing-100, 8px);
-align-self: stretch;
-border-radius: 999px;
-background: var(--color-red, #C73B0F);
-width: 336px;
-color: var(--color-white, #FFF);
-
-/* text-preset-3 */
-font-family: "Red Hat Text";
-font-size: var(--spacing-200, 16px);
-font-style: normal;
-font-weight: 600;
-line-height: normal;
+  padding: var(--spacing-200, 16px) var(--spacing-300, 24px);
+  justify-content: center;
+  align-items: center;
+  gap: var(--spacing-100, 8px);
+  align-self: stretch;
+  border-radius: 999px;
+  background: var(--color-red, #c73b0f);
+  width: 336px;
+  color: var(--color-white, #fff);
+  font-family: "Red Hat Text";
+  font-size: var(--spacing-200, 16px);
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
 }
 
-/* Tablet ekranlari: 768px dan kichik va 1024px gacha */
-@media (max-width: 1024px) and (min-width: 768px) {
+/* Circle buttons */
+.circle-btn {
+  border-radius: 50%;
+  border: none;
+  background-color: #c73b0f;
+  color: white;
+  border: #fff solid 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 1px 3px;
+}
+.btn-count {
+  color: #fff;
+}
+.circle-btn:hover {
+  background-color: #c73b0f;
+}
+.plus:hover {
+  background-color: #1e8449;
+}
+
+/* Media queries */
+@media screen and (max-width: 1240px) {
+  .your-cart {
+    width: 100%;
+    margin-left: 0;
+    margin-top: 50px;
+  }
   .two {
-    display: block; /* flex emas, elementlar pastga tushadi */
+    display: block;
   }
-}
-
-/* Mobil ekranlari: 767px dan kichik */
-@media (max-width: 767px) {
-  .cards {
-    grid-template-columns: 1fr; /* har bir card 1 qator bo‘lsin */
-    gap: 16px; /* cardlar orasidagi bo‘shliqni kamaytirish */
-  }
-  
   .container {
+    max-width: 100%;
     padding-left: 16px;
     padding-right: 16px;
   }
-  
+  .cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media screen and (max-width: 800px) {
+
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (max-width: 500px) {
+  .two {
+    display: block;
+  }
+  .cards {
+    display: block;
+    width: 100%;
+  }
+  .card_img {
+    width: 327px;
+    height: auto;
+  }
+  .btn {
+    margin-left: 8.3rem;
+  }
+  .card {
+    margin-bottom: 2.4rem;
+  }
+  .title {
+    margin-top: 2.4rem;
+  }
+  .container {
+    padding-left: 80px;
+    padding-right: 16px;
+  }
+  .cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media screen and (max-width: 375px) {
+  .container {
+    padding-left: 30px;
+    padding-right: 16px;
+  }
   .your-cart {
-    width: 100%; /* cart kengligi ekran bo‘yicha */
-    margin-left: 0;
+    width: 327px;
+  }
+  .hr {
+    width: 285px;
   }
 }

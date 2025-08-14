@@ -1,0 +1,21 @@
+.btn {
+    position: absolute;
+    margin-top: -19px;
+    margin-left: 4.5rem;
+    display: flex;
+    width: 16rem;
+    max-width: 16rem;
+    padding: var(--spacing-150, 1.2rem);
+    justify-content: center;
+    align-items: center;
+    gap: var(--spacing-100, 8px);
+    border-radius: 999px;
+    border: 1px solid var(--color-rose-400, #ad8a85);
+    background: var(--color-white, #fff);
+    color: var(--color-rose-900, #260f08);
+    font-family: "Red Hat Text";
+    font-size: var(--font-size-text-preset-4, 14px);
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+  }

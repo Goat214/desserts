@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 
+
 function App() {
   const [count, setCount] = useState(0);
   const [desserts, setDesserts] = useState([]);
+  const cartItems = Object.keys(count).filter((id) => count[id] > 0);
   useEffect(() => {
     fetch("https://json-api.uz/api/project/dessertss/desserts")
       .then((res) => res.json())
@@ -49,11 +51,11 @@ function App() {
                 </button>
               ) : (
                 <div className="btn btn-secend">
-                  <button onClick={() => handleMinus(dessert.id)}>
+                  <button className="circle-btn" onClick={() => handleMinus(dessert.id)}>
                     &#8722;
                   </button>
-                  <span>{count[dessert.id]}</span>
-                  <button onClick={() => handleAdd(dessert.id)}> &#43;</button>
+                  <span className="btn-count">{count[dessert.id]}</span>
+                  <button className="circle-btn" onClick={() => handleAdd(dessert.id)}> &#43;</button>
                 </div>
               )}
               <p className="card_description">{dessert.category}</p>
@@ -72,7 +74,7 @@ function App() {
           Your Cart ({Object.values(count).reduce((a, b) => a + b, 0)} items)
         </h2>
 
-        {Object.keys(count).length === 0 ? (
+        {cartItems.length === 0 ? (
           <div className="preper">
             <img
               className="your-cart_img"
@@ -86,7 +88,7 @@ function App() {
         ) : (
           <div className="cart-items">
             {desserts
-              .filter((dessert) => count[dessert.id])
+              .filter((dessert) => count[dessert.id] > 0)
               .map((dessert) => (
                 <div key={dessert.id} className="cart-item">
                   <p className="cart-item-name">{dessert.name}</p>
@@ -98,28 +100,26 @@ function App() {
                     </span>
                   </p>
                   <hr className="hr" />
-                  <div className="cart-total">
-                    <div>
-                      <h4>Order Total</h4>
-                    </div>
-                    <div>
-                      {desserts
-                        .filter((dessert) => count[dessert.id])
-                        .reduce(
-                          (sum, dessert) =>
-                            sum + dessert.price * count[dessert.id],
-                          0
-                        )}
-                      $
-                    </div>
-                  </div>{" "}
-                  <p className="bottom">
-                    <img src="/images/icon-carbon-neutral.svg" alt="" /> This is
-                    a carbon-neutral delivery
-                  </p>
-                  <button className="last">Confirm Order</button>
                 </div>
               ))}
+
+            <div className="cart-total">
+              <h4>Order Total</h4>
+              <div>
+                $
+                {desserts
+                  .filter((dessert) => count[dessert.id] > 0)
+                  .reduce(
+                    (sum, dessert) => sum + dessert.price * count[dessert.id],
+                    0
+                  )}
+              </div>
+            </div>
+            <p className="bottom">
+              <img src="/images/icon-carbon-neutral.svg" alt="" /> This is a
+              carbon-neutral delivery
+            </p>
+            <button className="last">Confirm Order</button>
           </div>
         )}
       </div>
